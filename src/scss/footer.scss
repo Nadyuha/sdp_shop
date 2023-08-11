@@ -1,0 +1,179 @@
+@import '_variables';
+@import '_mixin';
+
+.footer {
+    background: $grey_light;
+    &__container {
+        padding-top: 24px;
+        padding-bottom: 17px;
+        display: flex;
+        justify-content: space-between;
+        @include respond(x-large) {
+            padding-top: 24px;
+            padding-bottom: 17px;
+        }
+        @include respond(large) {
+            padding-top: 24px;
+            padding-bottom: 17px;
+        }
+        @include respond(medium) {
+            padding-top: 24px;
+            padding-bottom: 17px;
+            padding-left: 70px;
+            display: flex;
+            flex-direction: column;
+        }
+        @include respond(small) {
+            padding-top: 24px;
+            padding-right: 12px;
+            padding-bottom: 17px;
+            padding-left: 12px;
+        }
+        @include respond(x-small) {
+            padding-top: 24px;
+            padding-right: 8px;
+            padding-bottom: 17px;
+            padding-left: 8px;
+        }
+    }
+    &__left {
+        @include respond(medium) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include respond(small) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        &-logo {
+            width: 100%;
+            height: 27px;
+            margin-bottom: 28px;
+            @include respond(medium) {
+                margin-bottom: 24px;
+            }
+            @include respond(x-small) {
+                margin-bottom: 20px;
+            }
+        }
+        &-social {
+            display: flex; 
+            @include respond(medium) {
+                align-items: flex-start;
+            }
+            &-link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $grey;
+                transition: color, background, 0.3s ease-in-out;
+                outline: none;
+                A
+                &-img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            &-link:hover:not(:focus-visible) {
+                color: $primary;
+            }
+            &-link:focus-visible {
+                color: $white;
+                background: $primary_light;
+            }
+            &-link:active:not(:focus-visible) {
+                color: $primary_shade;
+            }
+
+            &-link:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+    }
+    &__right {
+        width: 66%;
+        @include respond(large) {
+            width: 77.5%;
+        }
+        @include respond(medium) {
+            width: 100%;
+        }
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            @include respond(x-small) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 24px;
+                column-gap: 12px;
+            }
+        }
+        &-item {
+            display: flex;
+            flex-direction: column;
+            padding: 3px;
+            @include respond(x-small) {
+                padding: 0;
+            }
+            &-two, &-three {
+                position: relative;
+                left: -15px;
+                @include respond(x-small) {
+                    left: 0;
+                    padding: 0;
+                }
+            }
+            &-title {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 16px;
+                color: $black;
+                margin: 0;
+                margin-bottom: 5px;
+                @include respond(x-small) {
+                    position: relative;
+                    left: 2px;
+                }
+            }
+        }
+        &-descr {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            left: -10px;
+            @include respond(x-small) {
+                left: 0px;
+            }
+            &-link {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 14px;
+                color: $grey;
+                @include respond(x-small) {
+                    padding-right: 3px;
+                    padding-left: 3px;
+                }
+            }
+            &-link:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    &__down {
+        text-align: center;
+        background: $white;
+        &-sup {
+            font-family: $font_open_sans;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: $grey;
+            position: relative;
+            top: 5px;
+            padding: 5px;
+        }
+    }
+}

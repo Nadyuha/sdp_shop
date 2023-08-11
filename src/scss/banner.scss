@@ -1,0 +1,270 @@
+@import '_variables';
+@import '_mixin';
+@import '../css/swiper-bundle.min.css';
+
+.banner {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 70px;
+    overflow: hidden;
+    @include respond(large) {
+        top: 27px;
+        margin-bottom: 100px;
+    }
+    @include respond(small) {
+        top: 43px;
+        margin-bottom: 130px;
+    }
+    @include respond(x-small) {
+        margin-bottom: 60px;
+        //overflow: visible;
+    }
+    &__empty {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 20;
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        background: $white;
+        &-img {
+            &-picture {
+                position: relative;
+                top: 100px;
+                width: 300px;
+                height: 200px;
+            }
+        }
+    }
+}
+.swiper {
+    position: relative;
+    &-banner {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        @include respond(x-small) {
+            height: 355px;
+        }
+        &-pagination {
+            display: flex;
+            visibility: visible;
+            color: $black;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 0;
+            @include respond(large) {
+                padding: 15px 0;
+            }
+            @include respond(x-small) {
+                padding: 0;
+            }
+        }
+        &-pagination .swiper-pagination-bullet {
+            width: 14px;
+            height: 14px;
+            background: $black;
+            @include respond (x-small) {
+                width: 6px;
+                height: 6px;
+            }
+        }
+        &-pagination .swiper-pagination-bullet-active {
+            background: opacity(0.3);
+        }
+        &-pagination .swiper-horizontal.swiper-pagination-bullets .swiper-pagination-bullet, 
+                        .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 0 8px;
+            @include respond(x-small) {
+                margin: 0 4px;
+            }
+        }
+    }
+    &-slide {
+        &-container {
+            position: relative;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            z-index: 2;
+            @include respond(x-large) {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            @include respond(large) {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            @include respond(medium) {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            @include respond(small) {
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            @include respond(x-small) {
+                padding: 25px 30px 30px 30px;
+            }
+            &-title {
+                font-family: $font_open_sans;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 65px;
+                color: $grey;
+                width: 500px;
+                margin: 0;
+                margin-bottom: 49px;
+                min-height: 131px;
+                @include respond(small) {
+                    font-size: 30px;
+                }
+                @include respond(x-small) {
+                    font-size: 20px;
+                    line-height: 33px;
+                    width: 204px;
+                }
+                &-title3 {
+                    color: $white;
+                    width: 590px;
+                }
+            }
+            &-btn {
+                @include resetBtn;
+                @include primaryBtn;
+                cursor: pointer;
+                transition: background, color, border 0.3s ease-in-out;
+                outline: none;
+                @include respond(x-small) {
+                    position: absolute;
+                    top: 245px;
+                    left: 12px;
+                    width: 93%;
+                }
+            }
+            &-btn:hover:not(:focus-visible) {
+                border: 2px solid $primary_light;
+                background: $primary_light;
+            }
+            &-btn:focus-visible {
+                border: 2px solid $primary_shade;
+                background: $primary_light;
+            }
+            &-btn:active:not(:focus-visible) {
+                border: 2px solid $primary_shade;
+                background: $primary_shade;
+            }
+            &-btn:disabled {
+                border: 2px solid $md_grey;
+                background: $md_grey;
+                color: $grey;
+            }
+        }
+        &-img1 {
+            display: block;
+            background: center / cover no-repeat url(../img/banner-1.png);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            @include respond(large) {
+                background: center / cover no-repeat url(../img/banner-1-1024.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(medium) {
+                background: center / cover no-repeat url(../img/banner-1-768.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(small) {
+                background: center / cover no-repeat url(../img/banner-1-320.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(x-small) {
+                height: 60%;
+            }
+        }
+        &-img2 {
+            display: block;
+            background: center / cover no-repeat url(../img/banner-2.png);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            @include respond(large) {
+                background: center / cover no-repeat url(../img/banner-2-1024.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(medium) {
+                background: center / cover no-repeat url(../img/banner-2-768.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(small) {
+                background: center / cover no-repeat url(../img/banner-2-320.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(x-small) {
+                height: 60%;
+            }
+            
+        }
+        &-img3 {
+            display: block;
+            background: center / cover no-repeat url(../img/banner-3.png);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            @include respond(large) {
+                background: center / cover no-repeat url(../img/banner-3-1024.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(medium) {
+                background: center / cover no-repeat url(../img/banner-3-768.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(small) {
+                background: center / cover no-repeat url(../img/banner-3-320.png);
+                width: 100%;
+                height: 100%;
+            }
+            @include respond(x-small) {
+                height: 60%;
+            }
+        }
+        // &-img4 {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     background: $white;
+        //     &-picture {
+        //         position: relative;
+        //         top: 100px;
+        //         width: 300px;
+        //         height: 200px;
+        //     }
+        // }
+    }
+}
+.swiper-banner.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    @include respond(x-small) {
+    bottom: 155px;
+    }
+}
+
+.active-input {
+    visibility: visible;
+}
+
+.swiper-slide .swiper-slide-img2 {
+    height: auto;
+}
+
+.swiper-slide .swiper-slide-img3 {
+    height: auto;
+}

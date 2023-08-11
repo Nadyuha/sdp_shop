@@ -1,0 +1,679 @@
+@import '_variables';
+@import '_mixin';
+
+.header {
+    @include respond(large) {
+        position: relative;
+        top: 58px;
+    }
+    @include respond(small) {
+        top: -20px;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 17px;
+        padding-bottom: 13px;
+        @include respond(x-large) {
+            padding-top: 17px;
+            padding-bottom: 13px;
+        }
+        @include respond(large) {
+            display: block;
+            padding-top: 9px;
+            //padding-bottom: 8px;
+        }
+        @include respond(medium) {
+            padding-top: 9px;
+            padding-right: 55px;
+            padding-bottom: 1px;
+        }
+        @include respond(small) {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        &-contacts {
+            display: flex;
+            justify-content: space-between;
+            width: 360px;
+            @include respond(large) {
+                position: relative;
+                width: 100%;
+                top: -47px;
+            }
+            @include respond(small) {
+                flex-direction: column;
+                top: 77px;
+                align-items: flex-start;
+            }
+            &-descr {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 20px;
+                position: relative;
+                @include respond(small) {
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                }
+                &-list {
+                    display: none;
+                    position: absolute;
+                    top: 30px;
+                    right: -10px;
+                    padding: 16px 19px;
+                    border: 2px solid $grey_light;
+                    background: $white;
+                    z-index: 3;
+                    @include respond(x-small) {
+                        top: 38px
+                    }
+                }
+                &-item {
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: $black;
+                    cursor: pointer;
+                    transition: color 0.3s ease;
+                }
+                &-item:hover {
+                    color: $primary;
+                }
+                &-item:not(:last-child){
+                    margin-bottom: 11px;
+                }
+                &-title {
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: $black;
+                }
+                &-btn {
+                    @include resetBtn;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 19px;
+                    color: $primary;
+                    cursor: pointer;
+                    padding: 0px 5px;
+                    &-img {
+                        width: 12px;
+                        height: 8px;
+                    }
+                }
+                &-tel {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 14px;
+                    color: $secondary;
+                        &-img {
+                        width: 16.5px;
+                        height: 16.5px;
+                        }
+                        @include respond(large) {
+                            position: relative;
+                            right: -10px;
+                        }
+                        @include respond(medium) {
+                            position: relative;
+                            right: 10px;
+                        }
+                }
+            }
+        }
+        &-container {
+            background: $grey_light;
+            margin-bottom: 32px;
+            @include respond(x-small) {
+                position: relative;
+                top: -8px;
+                margin-bottom: 0;
+            }
+        }
+        &-menu {
+            width: 56%;
+            @include respond(large) {
+                width: 77%;
+                position: relative;
+                top: -10px;
+                left: -10px;
+            }
+            @include respond(medium) {
+                width: 100%;
+            }
+            &-list {
+                display: flex;
+                justify-content: space-between;
+                @include respond(medium) {
+                    flex-wrap: wrap;
+                }
+                @include respond(small) {
+                    display: none;
+                }
+                &-mobile {
+                    display: none;
+                    @include respond(x-small) {
+                        display: flex;
+                        background: $grey_light;
+                        padding-top: 23px;
+                        padding-bottom: 24px;
+                    }
+                }
+            }
+            &-item {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 14px;
+                color: $grey;
+                margin-bottom: 7px;
+                @include respond(x-small) {
+                    display: flex;
+                    width: 50%;
+                }
+            }
+            &-link {
+                color: inherit;
+            }
+        }
+    }
+    &__bottom {
+        margin-bottom: 32px;
+        @include respond(large) {
+            margin-bottom: 62px;
+        }
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            @include respond(medium) {
+                //position: relative;
+                justify-content: center;
+            }
+            @include respond(small) {
+                top: 57px;
+            }
+            @include respond(x-small) {
+                top: 99px;
+            }
+            &-burger {
+                display: none;
+                position: absolute;
+                left: 9.5%;//0;
+                width: 24px;
+                height: 24px;
+                @include resetBtn;
+                cursor: pointer;
+                &-img {
+                    width: 100%;
+                    height: 100%;
+                }
+                @include respond(medium) {
+                    display: block;
+                    z-index: 5;
+                }
+                @include respond(small) {
+                    top: 170px;
+                    left: 4.5%;
+                }
+                @include respond(x-small) {
+                    left: 15px;//5px;
+                    top: 175px;
+                }
+            }
+            &-close {
+                display: none;
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                @include resetBtn;
+                cursor: pointer;
+                z-index: 10;
+                &-img {
+                    color: $primary;
+                    width: 24px;
+                    height: 24px;
+                }
+                @include respond(medium) {
+                    top: 15px;
+                    left: 72px;
+                }
+                @include respond(small) {
+                    left: 5px;
+                    left: 27px;
+                }
+                @include respond(x-small) {
+                    left: 15px;
+                    top: 12px;
+                }
+            }
+            &-logo {
+                margin-right: 10px;
+                @include respond(medium) {
+                    margin-right: 0;
+                }
+                @include respond(small) {
+                    position: relative;
+                    top: -75px;
+                }
+                @include respond(x-small) {
+                    top: -45px;
+                }
+                &-img {
+                    width: 187px;
+                    height: 27px;
+                }
+            }
+            &-nav {
+                display: flex;
+                align-items: center;
+                width: 75.4%;
+                @include respond(large) {
+                    position: relative;
+                    right: -10px;
+                }
+                @include respond(medium) {
+                    position: absolute;
+                    max-height: calc(100vh - 0px);
+                    left: 0;
+                    right: 0;
+                    top: 65px;
+                    z-index: 7;
+                    background: $white;
+                    padding: 80px 72px 30px 62px;
+                    border-radius: 10px;
+                    width: 100%;
+                    transition: left, 0.8s ease;
+                }
+                @include respond(small) {
+                    top: 165px;
+                    padding: 80px 22px 30px 22px;
+                }
+                @include respond(x-small) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 63px 0px 0px 0px;
+                    z-index: 12;
+                }
+                &-list {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    @include respond(medium) {
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        width: 56%;
+                        height: 175px;
+                    }
+                    @include respond(x-small) {
+                        height: 337px;
+                        margin-bottom: 26px;
+                    }
+                }
+                &-item {
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: $black;
+                    &-img {
+                        display: none;
+                        @include respond(medium) {
+                            display: block;
+                            position: absolute;
+                            right: 72px;
+                            bottom: 60px;
+                            background: url(../img/burger.png) 0 0 no-repeat;
+                            background-size: cover;
+                            width: 161px;
+                            height: 112px;
+                        }
+                        @include respond(x-small) {
+                            display: none;
+                        }
+                    }
+                }
+                &-link {
+                    color: inherit;
+                }
+                &-item:not(:last-child) {
+                    @include respond(medium) {
+                        margin-bottom: 30px;
+                    }
+                    @include respond(x-small) {
+                        margin-bottom: 0px;
+                    }
+                }
+            }
+        }
+        &-down {
+            position: relative;
+            @include respond(large) {
+                position: static;
+            }
+            &-form {
+                display: flex;
+                position: relative;
+                @include respond(small) {
+                    flex-direction: column;
+                }
+                &-block {
+                    position: relative;
+                    width: 78%;
+                    @include respond(large) {
+                        width: 68.5%;
+                    }
+                    @include respond(medium) {
+                        width: 74%;
+                    }
+                    @include respond(small) {
+                        width: 100%;
+                        margin-bottom: 15px;
+                    }
+                    &-input {
+                        width: 100%;
+                        position: relative;
+                        border: 2px solid transparent;
+                        border-radius: 10px 0 0 10px;
+                        outline: transparent;
+                        padding: 19px 59px;
+                        background: $grey_light;
+                        color: $grey;
+                        transition: background 0.3s ease-in-out;
+                        @include respond(small) {
+                            border-radius: 10px;
+                        }
+                        &-img {
+                            position: absolute;
+                            top: 21px;
+                            left: 34px;
+                            width: 15px;
+                            height: 15px;
+                            z-index: 2;
+                        }
+                    }
+                    &-input:hover:not(:focus-visible) {
+                        background: $md_grey;
+                    }
+                    &-input:focus-visible {
+                        background: $pink_light;
+                        border: 2px solid $primary;
+                    }
+                    &-input:focus::placeholder {
+                        color: $black;
+                        font-size: 0;
+                    }
+                    &-input::placeholder {
+                        font-family: $font_open_sans;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 19px;
+                        color: $grey;
+                    }
+                    &-btn {
+                        @include resetBtn;
+                        position: absolute;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid $primary;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                        top: 13px;
+                        right: 32px;
+                        cursor: pointer;
+                        color: $primary;
+                        background: transparent;
+                        outline: none;
+                        transition: color, background 0.3s ease-in-out;
+                        &-img {
+                            height: 10px;
+                            width: 100%;
+                        }
+                    }
+                    &-btn:hover:not(:focus-visible) {
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-btn:focus-visible {
+                        background: $primary_light;
+                        color: $white;
+                    }
+                    &-btn:active:not(:focus-visible) {
+                        background: $primary_shade;
+                        border: 2px solid $primary_shade;
+                        color: $white;
+                    }
+                }
+                &-btn {
+                    @include resetBtn;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: $primary;
+                    position: relative;
+                    width: 30%;
+                    background: $white;
+                    border: 2px solid $grey_light;
+                    border-radius: 0 10px 10px 0;
+                    padding: 17px 50px 17px 30px;
+                    outline: transparent;
+                    text-align: left;
+                    z-index: 6;
+                    cursor: pointer;
+                    transition: background, border, 0.3s ease-in-out;
+                    @include respond(large) {
+                        width: 31.5%;
+                    }
+                    @include respond(small) {
+                        width: 100%;
+                        border-radius: 10px;
+                    }
+                    &-img {
+                        position: absolute;
+                        top: 24px;
+                        right: 32px;
+                        width: 12px;
+                        height: 8px;
+                    }
+                }
+                &-btn:hover:not(:focus-visible) {
+                    border: 2px solid $primary;
+                }
+                &-btn:focus-visible {
+                    border: 2px solid $primary;
+                    background: $pink_light;
+                }
+                &-btn:active:not(:focus-visible) {
+                    border: 2px solid $primary_shade;
+                }
+                &-list {
+                    display: none;
+                    grid-template-columns: repeat(2, 1fr);
+                    min-height: 195px;
+                    position: absolute;
+                    top: 53px;
+                    right: 0;
+                    padding: 22px 23px;
+                    border: 2px solid $grey_light;
+                    background: $white;
+                    z-index: 4;
+                    width: 28.2%;
+                    @include respond(large) {
+                        width: 31.5%;
+                    }
+                    @include respond(medium) {
+                        width: 30.5%;
+                        top: 52px;
+                    }
+                    @include respond(small) {
+                        width: 100%;
+                        top: 120px;
+                    }
+                }
+                &-item {
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: $black;
+                    cursor: pointer;
+                    @include respond(medium) {
+                        margin-right: 5px;
+                    }
+                }
+                &-item:hover {
+                    color: $primary;
+                    transition: color 0.3s ease-in-out;
+                }
+            }
+            &-action {
+                width: 83%;
+                @include respond(large) {
+                    width: 100%;
+                }
+                @include respond(small) {
+                    position: relative;
+                    top: 57px;
+                }
+                @include respond(x-small) {
+                    top: 93px;
+                }
+            }
+            &-user {
+                position: absolute;
+                display: flex;
+                gap: 15px;
+                top: 9px;
+                right: -5px;
+                @include respond(large) {
+                    top: 7px;
+                    right: 30px;
+                    width: 109px;
+                    gap: 17px;
+                }
+                @include respond(medium) {
+                    top: 39%;
+                    right: 67px;
+                    width: 109px;
+                    gap: 17px;
+                }
+                @include respond(small) {
+                    top: 54%;
+                    right: 12px;
+                }
+                @include respond(x-small) {
+                    top: 62.5%;
+                    right: 7px;
+                }
+                &-owner {
+                    @include resetBtn;
+                    cursor: pointer;
+                    color: $primary;
+                    outline: none;
+                    padding: 4px;
+                    transition: color, background 0.3s ease-in-out;
+                    &-img {
+                        width: 26px;
+                        height: 28px;
+                    }
+                }
+                &-owner:hover:not(:focus-visible) {
+                    color: $primary_light;
+                }
+                &-owner:focus-visible {
+                    background: $primary_light;
+                    color: $white;
+                }
+                &-owner:active:not(:focus-visible) {
+                    color: $primary_shade;
+                }
+                &-cart {
+                    @include resetBtn;
+                    cursor: pointer;
+                    color: $primary;
+                    outline: none;
+                    padding: 3px 6px 1px 1px;
+                    transition: background, color 0.3s ease-in-out;
+                    &-img {
+                        width: 30px;
+                        height: 28px;
+                    }
+                    &-cell {
+                        position: relative;
+                        top: -11.5px;
+                        right: -9.5px;
+                        font-family: $font_open_sans;
+                        font-weight: 700;
+                        font-size: 10px;
+                        line-height: 10px;
+                        color: $white;
+                        padding: 2px 5px;
+                        width: 14px;
+                        height: 15px;
+                        background: $secondary;
+                        border-radius: 50%;
+                    }
+                }
+                &-cart:hover:not(:focus-visible) {
+                    color: $primary_light;
+                }
+                &-cart:focus-visible {
+                    color: $white;
+                    background: $primary_light;
+                }
+                &-cart:active:not(:focus-visible) {
+                    color: $primary_shade;
+                }
+            }
+        }
+    }
+}
+
+.active-btn .header__top-contacts-descr-btn-img {
+    transform: rotate(180deg);
+}
+
+.active-btn .header__bottom-down-form-btn-img {
+    transform: rotate(180deg);
+}
+
+.active-drop {
+    display: block;
+}
+
+.active-select {
+    display: grid;
+}
+
+.active-img {
+    padding-right: 5px;
+}
+
+.header__bottom-top-burger.close {
+    display: none;
+}
+
+.close {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.close-nav {
+    @include respond(medium) {
+        left: -100%;
+    }
+}

@@ -1,0 +1,73 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == x-large {
+        @media (max-width: 1770px) { @content };
+    }
+    @if $breakpoint == large {
+        @media (max-width: 1250px) { @content };
+    }
+    @if $breakpoint == medium {
+        @media (max-width: 900px) { @content };
+    }
+    @if $breakpoint == small {
+        @media (max-width: 700px) { @content };
+    }
+    @if $breakpoint == x-small {
+        @media (max-width: 550px) { @content };
+    }
+}
+
+@mixin resetBtn {
+    padding: 0;
+    border: none;
+    color: inherit;
+    background-color: transparent;
+}
+
+@mixin coverImg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin primaryBtn {
+    font-family: $font_open_sans;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 16px;
+    color: $white;
+    padding: 20px 46px;
+    background: $primary;
+    border-radius: 10px;
+    border: 2px solid $primary;
+    @include respond(x-small) {
+        padding: 19px 35px;
+    }
+}
+
+@mixin transparentBtn {
+    font-family: $font_open_sans;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 16px;
+    color: $primary;
+    padding: 18px 31px;
+    border-radius: 10px;
+    border: 2px solid $primary;
+    outline: none;
+}
+
+@mixin title {
+    font-family: $font_open_sans;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
+    color: $black;
+    margin: 0;
+    padding: 0;
+    @include respond(small) {
+        font-size: 24px;
+        line-height: 24px;
+    }
+}

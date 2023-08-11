@@ -1,0 +1,436 @@
+@import '_variables';
+@import '_mixin';
+
+.categories {
+    margin-bottom: 70px;
+    @include respond(x-small) {
+        margin-bottom: 77px
+    }
+    &__container {
+        &-title {
+            @include title;
+            margin-bottom: 26px;
+        }
+    }
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 32px;
+        @include respond(large) {
+            grid-template-columns: repeat(9, 1fr);
+        }
+        @include respond(medium) {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        @include respond(x-small) {
+            row-gap: 32px;
+            column-gap: 16px;
+        }
+        &-card {
+            display: flex;
+            flex-direction: column;
+            background: $grey_light;
+            border-radius: 10px;
+            padding: 28px 30px 30px 30px;
+            @include respond(large) {
+                position: relative;
+            }
+            @include respond(x-small) {
+                padding: 10px 16px 16px 16px;
+            }
+            &-list {
+                display: flex;
+                position: relative;
+                left: -10px;
+                margin-bottom: 12px;
+                @include respond(large) {
+                    left: 0;
+                }
+                @include respond(small) {
+                    flex-wrap: wrap;
+                    left: 0;
+                }
+                @include respond(x-small) {
+                    left: -10px;
+                    margin-bottom: 2px;
+                }
+            }
+            &-list-one {
+                @include respond(x-small) {
+                    flex-wrap: nowrap;
+                    left: 10px;
+                    margin-bottom: 15px;
+                }
+            }
+            &-list-two {
+                @include respond(medium) {
+                display: flex;
+                width: 103%;
+                @include respond(x-small) {
+                    width: 100%;
+                }
+            }
+            }
+            &-list-five {
+                @include respond(medium) {
+                    display: flex;
+                    left: 8px;
+                }
+            }
+            &-item:not(:last-child) {
+                margin-right: 10px;
+            }
+            &-item {
+                @include respond(large) {
+                    position: relative;
+                    left: -10px;
+                }
+                @include respond(x-small) {
+                    position: relative;
+                    left: 0px;
+                    margin-bottom: -3px;
+                }
+                &-three {
+                    @include respond(large) {
+                        position: relative;
+                        left: 0px;
+                    }
+                }
+                &-three:not(:last-child) {
+                    @include respond(large) {
+                        margin-right: 12%;
+                    }
+                }
+            }
+            &-one {
+                grid-column: span 6;
+                min-height: 511px;
+                @include respond(x-small) {
+                    min-height: 332px;
+                }
+            }
+            &-two {
+                grid-column: span 6;
+                min-height: 511px;
+                @include respond(large) {
+                    grid-column: span 3;
+                    order: 4;
+                }
+                @include respond(medium) {
+                    min-height: 511px;;
+                }
+                @include respond(small) {
+                    padding: 16px;
+                }
+                @include respond(x-small) {
+                    min-height: 206px;
+                }
+            }
+            &-three {
+                grid-column: span 4;
+                min-height: 405px;
+                @include respond(large) {
+                    grid-column: span 3;
+                    padding-top: 10px;
+                }
+                @include respond(medium) {
+                    min-height: 511px;
+                }
+                @include respond(small) {
+                    padding: 16px;
+                }
+                @include respond(x-small) {
+                    min-height: 206px;
+                }
+            }
+            &-four {
+                @include respond(medium) {
+                    grid-column: span 3;
+                    order: 4;
+                }
+                @include respond(small) {
+                    padding: 16px;
+                }
+            }
+            &-five {
+                @include respond(large) {
+                    grid-column: span 3;
+                    padding-top: 10px;
+                    order: 4;
+                }
+                @include respond(small) {
+                    padding: 16px;
+                }
+                @include respond(x-small) {
+                    min-height: 206px;
+                }
+            }
+            &-four, &-five {
+                grid-column: span 4;
+                min-height: 405px;
+                @include respond(large) {
+                    grid-column: span 3;
+                }
+                @include respond(medium) {
+                    min-height: 511px;
+                }
+                @include respond(x-small) {
+                    min-height: 206px;
+                }
+            }
+            &-link {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 14px;
+                color: $grey;
+                margin: 0;
+                outline: none;
+                @include respond(x-small) {
+                    font-size: 10px;
+                }
+                &-mobile {
+                    @include respond(x-small) {
+                        font-size: 14px;
+                    }
+                }
+            }
+            &-title {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                color: $black;
+                margin: 0;
+                @include respond(x-small) {
+                    margin-right: 20px;
+                }
+                &-btn {
+                    margin-bottom: 28px;
+                    @include respond(x-small) {
+                        position: relative;
+                        align-items: center;
+                        display: flex;
+                    }
+                }
+                &-one {
+                    @include respond(x-small) {
+                        position: relative;
+                        left: 10px;
+                    }
+                }
+                &-mobile {
+                    @include respond(x-small) {
+                        position: relative;
+                        font-size: 16px;
+                        margin-right: 6px;
+                    }
+                    &-four {
+                        @include respond(x-small) {
+                            line-height: 22px;
+                        }
+                    }
+                }
+            }
+            &-img {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 100%;
+                position: relative;
+                left: -30px;
+            }
+            &-img1 {
+                background: url(../img/categories-1.png) 0 0 no-repeat;
+                @include respond(x-small) {
+                    background: url(../img/categories-1-320.png) 0 0 no-repeat;
+                    height: 212px;
+                    position: absolute;
+                    top: 105px;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            &-img2 {
+                background: url(../img/categories-2.png) 0 0 no-repeat;
+                @include respond(large) {
+                    background: url(../img/categories-2-1024.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 130px;
+                    right: 0;
+                    left: 0;
+                    height: 305px;
+                }
+                @include respond(x-small) {
+                    background: url(../img/categories-2-320.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 87px;
+                    right: 0;
+                    left: 0;
+                    height: 104px;
+                }
+            }
+            &-img3 {
+                background: url(../img/categories-3.png) 0 0 no-repeat;
+                @include respond(large) {
+                    background: url(../img/categories-3-1024.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 130px;
+                    right: 0;
+                    left: 0;
+                    max-width: 296px;
+                    height: 305px;
+                }
+                @include respond(x-small) {
+                    background: url(../img/categories-3-320.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 86px;
+                    right: 0;
+                    left: 0;
+                    height: 104px;
+                }
+            }
+            &-img4 {
+                background: url(../img/categories-4.png) 0 0 no-repeat;
+                @include respond(large) {
+                    background: url(../img/categories-4-1024.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 130px;
+                    right: 0;
+                    left: 0;
+                    max-width: 296px;
+                    height: 305px;
+                }
+                @include respond(x-small) {
+                    background: url(../img/categories-4-320.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 100px;
+                    right: 0;
+                    left: 0;
+                    height: 104px;
+                }
+            }
+            &-img5 {
+                background: url(../img/categories-5.png) 0 0 no-repeat;
+                @include respond(large) {
+                    background: url(../img/categories-5-1024.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 130px;
+                    right: 0;
+                    left: 0;
+                    max-width: 296px;
+                    height: 305px;
+                }
+                @include respond(x-small) {
+                    background: url(../img/categories-5-320.png) 0 0 no-repeat;
+                    position: absolute;
+                    top: 87px;
+                    right: 0;
+                    left: 0;
+                    height: 104px;
+                }
+            }
+            &-picture-img {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 100%;
+                position: relative;
+                left: -30px;
+                @include respond(large) {
+                    min-height: 260px;
+                }
+                &-three {
+                    @include respond(large) {
+                    position: absolute;
+                    left: 0;
+                    height: 305px;
+                }
+                @include respond(x-small) {
+                    left: -10px;
+                }
+                }
+            }
+            &-btn {
+                margin-top: auto;
+                display: flex;
+                justify-content: flex-start;
+                color: $primary;
+                width: 108px;
+                outline: none;
+                @include respond (x-small) {
+                    display: none;
+                }
+                &-link {
+                    font-family: $font_open_sans;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $primary;
+                    margin-right: 5px;
+                    border-bottom: 2px solid transparent;
+                    transition: border-bottom .3s ease-in-out;
+                    outline: none;
+                    &-block {
+                        @include resetBtn;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50%;
+                        border: 2px solid $primary;
+                        cursor: pointer;
+                        &-img {
+                            width: 22px;
+                            height: 7px;
+                        }
+                        &-title {
+                            display: none;
+                            @include respond(x-small) {
+                            position: relative;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            color: $primary;
+                            top: 2px;
+                            right: 0px;
+                            width: 22px;
+                            height: 22px;
+                        }
+                        &-four {
+                            @include respond(x-small) {
+                                right: 3px;
+                            }
+                        }
+                        }
+                    }
+                }
+            }
+            &-btn:hover:not(:focus-visible) .categories__block-card-btn-link {
+                border-bottom: 2px solid $primary;
+            }
+            &-btn:hover:not(:focus-visible) .categories__block-card-btn-link-block {
+                background: $primary;
+                color: $white;
+            }
+            &-btn:focus-visible .categories__block-card-btn-link {
+                border-bottom: 2px solid $primary_shade;
+            }
+            &-btn:focus-visible .categories__block-card-btn-link-block {
+                background: $primary;
+                color: $white;
+                border: 2px solid $primary_shade;
+            }
+            &-btn:active:not(:focus-visible) .categories__block-card-btn-link {
+                color: $primary_shade;
+                border-bottom: 2px solid $primary_shade;
+            }
+            &-btn:active:not(:focus-visible) .categories__block-card-btn-link-block {
+                background: $primary_shade;
+                color: $white;
+                border: 2px solid $primary_shade;
+            }
+        }
+    }
+}

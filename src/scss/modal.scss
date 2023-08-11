@@ -1,0 +1,331 @@
+@import '_variables';
+@import '_mixin';
+
+/*modal*/
+
+.scroll-hidden {
+    max-height: 100vh;
+    overflow: hidden;
+    }
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 80;
+    text-align: center;
+    .modal::before {
+        content: "";
+        display: inline-flex;
+        vertical-align: middle;
+        height: 100%;
+    }    
+        &__block {
+            display: inline-flex;
+            position: relative;
+            top: 0;
+            width: 1280px;
+            max-width: 100%;
+            background: $white;
+            border-radius: 10px;
+            transition: opacity 0.3s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 90;
+            vertical-align: middle;
+            height: 684px;
+            @include respond(large) {
+                overflow-x: auto;
+                width: 952px;
+                height: 588px;
+            }
+            @include respond(medium) {
+                width: 624px;
+                height: 494px;
+            }
+            @include respond(x-small) {
+                width: 296px;
+                height: 286px;
+            }
+            &-close {
+                color: $grey_light;
+                position: absolute;
+                right: 18px;
+                top: 18px;
+                @include resetBtn;
+                cursor: pointer;
+                z-index: 10;
+                @include respond(x-small) {
+                    top: 16px;
+                    right: 16px;
+                }
+                &-img {
+                    color: $grey;
+                    width: 26px;
+                    height: 26px;
+                    @include respond(x-small) {
+                        width: 14px;
+                        height: 14px;
+                    }
+                }
+            }
+            &-container {
+                margin: 0;
+                padding: 45px 47px 52px 45px;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                @include respond(x-large) {
+                    padding: 15px 47px 12px 45px;
+                }
+                @include respond(large) {
+                    padding: 15px 40px 12px 35px;
+                }
+                @include respond(medium) {
+                    padding: 15px 20px 12px 20px;
+                }
+                @include respond(medium) {
+                    padding: 0px 20px 12px 20px;
+                }
+            }
+            &-btns {
+                position: absolute;
+                display: none;
+                align-items: center;
+                @include respond(large) {
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    top: 475px;
+                    left: -20px;
+                    width: 105%;
+                }
+                @include respond(medium) {
+                    top: 380px;
+                    left: -3px;
+                    width: 101%;
+                }
+                @include respond(x-small) {
+                    top: 212px;
+                    width: 102%;
+                }
+            }
+            &-swiper {
+                width: 100%;
+                height: 418px;
+                margin-left: auto;
+                margin-right: auto;
+                &-button {
+                    &-next {
+                        @include resetBtn;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid $primary;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+                        color: $primary;
+                        background: transparent;
+                        outline: none;
+                        transition: color, background, 0.3s ease-in-out;
+                        &-img {
+                            width: 8px;
+                            height: 100%;
+                        }
+                    } 
+                    &-next:hover:not(:focus-visible) {
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-next:focus-visible {
+                        background: $primary_light;
+                        color: $white;
+                        border: 2px solid $primary;
+                    }
+                    &-next:active:not(:focus-visible) {
+                        background: $primary_shade;
+                        color: $white;
+                        border: 2px solid $primary_shade;
+                    }
+                    &-prev {
+                        @include resetBtn;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid $primary;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+                        color: $primary;
+                        margin-right: 13px;
+                        background: transparent;
+                        outline: none;
+                        transition: color, background, 0.3s ease-in-out;
+                        &-img {
+                            width: 8px;
+                            height: 100%;
+                            transform: rotate(180deg);
+                        }
+                    }
+                    &-prev:hover:not(:focus-visible) {
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-prev:focus-visible {
+                        background: $primary_light;
+                        color: $white;
+                        border: 2px solid $primary;
+                    }
+                    &-prev:active:not(:focus-visible) {
+                        background: $primary_shade;
+                        color: $white;
+                        border: 2px solid $primary_shade;
+                    }
+                }
+                &-img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    &-one {
+                        background: center / contain no-repeat url(../img/modal-1.png);
+                        // background: url(../img/modal-1.png) 0 0 no-repeat;
+                        // background-position: center;
+                        // background-size: contain;
+                        width: 25%;
+                        @include respond(medium) {
+                            width: 48%;
+                        }
+                    }
+                    &-two {
+                        background: center / contain no-repeat url(../img/modal-2.png);
+                        //background: url(../img/modal-2.png) 0 0 no-repeat;
+                        //background-position: center;
+                        //background-size: contain;
+                        width: 22%;
+                        @include respond(large) {
+                            background: right / contain no-repeat url(../img/modal-2.png);
+                            //background-position: right;
+                        }
+                        @include respond(medium) {
+                            width: 52%;
+                        }
+                        @include respond(x-small) {
+                            background: center / contain no-repeat url(../img/modal-2.png);
+                        }
+                    }
+                    &-three {
+                        background: center / contain no-repeat url(../img/modal-3.png);
+                        // background: url(../img/modal-3.png) 0 0 no-repeat;
+                        // background-position: center;
+                        // background-size: contain;
+                        width: 19%;
+                        @include respond(medium) {
+                            width: 47%;
+                        }
+                    }
+                    &-four {
+                        background: center / contain no-repeat url(../img/modal-4.png);
+                        // background: url(../img/modal-4.png) 0 0 no-repeat;
+                        // background-position: center;
+                        // background-size: contain;
+                        width: 24.5%;
+                        @include respond(medium) {
+                            width: 45%;
+                        }
+                    }
+                    &-five {
+                        background: center / contain no-repeat url(../img/modal-5.png);
+                        // background: url(../img/modal-5.png) 0 0 no-repeat;
+                        // background-position: center;
+                        // background-size: contain;
+                        width: 31%;
+                        @include respond(medium) {
+                            width: 48%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+.swiper-slide-thumb-active.swiper-slide-visible.swiper-slide-active {
+    display: none;
+}
+
+
+.modal__block-swiper {
+    height: 23%;
+    width: 100%;
+    @include respond(large) {
+        width: 96%;
+    }
+    @include respond(medium) {
+        width: 90%;
+        height: 26.5%;
+    }
+    @include respond(x-small) {
+        width: 75%;
+        height: 32%;
+    }
+}
+
+.modal__block-swiper-thumbs {
+    height: 83%;
+    box-sizing: border-box;
+    @include respond(x-large) {
+        height: 66%;
+    }
+    @include respond(large) {
+        height: 58%;
+        margin-bottom: 65px;
+    }
+    @include respond(medium) {
+        height: 50%;
+        margin-bottom: 65px;
+    }
+    @include respond(small) {
+        height: 40%;
+        margin-bottom: 90px;
+    }
+    @include respond(x-small) {
+        margin-bottom: 40px;
+    }
+}
+
+.modal__block-swiper .modal__block-swiper-img.swiper-slide {
+    opacity: 1;
+}
+
+.modal__block-swiper-thumbs .swiper-slide {
+    width: 25%;
+    height: 86.5%;
+    opacity: 1;
+    @include respond(large) {
+        height: 100%;
+        overflow: hidden;
+    }
+}
+
+.modal__block-swiper-thumbs .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.active-modal {
+    transition: 0.5s;
+    opacity: 1;
+    visibility: visible;
+}

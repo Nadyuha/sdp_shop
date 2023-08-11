@@ -1,0 +1,44 @@
+@import '_variables';
+
+.orange-focus:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    z-index: -1;
+}
+
+.orange-focus:focus-visible:before {
+    opacity: 1;
+}
+
+.orange-focus {
+    padding: 1px 10px;
+}
+
+.orange-focus:hover:not(:focus-visible) {
+    color: $secondary_light;
+    background: none;
+    outline: none;
+    transition: color .3s ease;
+}
+
+.orange-focus:focus-visible {
+    color: $secondary;
+    background: $bone;
+    outline: none;
+    transition: background .3s ease-in-out;
+}
+
+.orange-focus:active:not(:focus-visible) {
+    color: $secondary_shade;
+    background: none;
+}
+
+.orange-focus:active:not(:focus-visible) svg {
+    transform: rotate(30deg);
+}

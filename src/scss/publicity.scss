@@ -1,0 +1,111 @@
+@import '_variables';
+@import '_mixin';
+
+.publicity {
+    background: center / cover no-repeat url(../img/publicity.png);
+    margin-bottom: 70px;
+    min-height: 600px;
+    width: 100%;
+    @include respond(large) {
+        background: center / cover no-repeat url(../img/publicity-1024.png);
+        width: 100%;
+        height: 100%;
+    }
+    @include respond(medium) {
+        background: center / cover no-repeat url(../img/publicity-768.png);
+        width: 100%;
+        height: 100%;
+    }
+    @include respond(x-small) {
+        background: center / cover no-repeat url(../img/publicity-320.png);
+        width: 100%;
+        height: 211px;
+        min-height: 210px;
+        margin-bottom: 162px;
+    }
+    &__container {
+        padding-top: 155px;
+        padding-bottom: 150px;
+        @include respond(x-large) {
+            padding-top: 155px;
+            padding-bottom: 150px;
+        }
+        @include respond(large) {
+            padding-top: 155px;
+            padding-bottom: 150px;
+        }
+        @include respond(medium) {
+            padding: 155px 37px 150px 37px;
+        }
+        @include respond(small) {
+            padding-top: 37px;
+        }
+        @include respond(x-small) {
+            padding-top: 37px;
+        }
+        &-title {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 50px;
+            @include respond(medium) {
+                width: 100%;
+            }
+            &-main {
+                font-family: $font_playfair_display;
+                font-weight: 900;
+                font-size: 60px;
+                line-height: 72px;
+                color: $gold;
+                @include respond(x-small) {
+                    font-size: 24px;
+                    line-height: 22px;
+                }
+            }
+            &-change {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 48px;
+                line-height: 57px;
+                color: $white;
+                @include respond(x-small) {
+                    font-size: 16px;
+                    line-height: 21px;
+                    width: 75%;
+                }
+            }
+        }
+        &-btn {
+            @include resetBtn;
+            @include primaryBtn;
+            cursor: pointer;
+            padding: 20px 30px;
+            transition: background, color, border 0.3s ease-in-out;
+            outline: none;
+            @include respond(x-small) {
+                position: relative;
+                top: 94px;
+                width: 100%;
+            }
+        }
+        &-btn:hover:not(:focus-visible) {
+            border: 2px solid $primary_light;
+            background: $primary_light;
+        }
+        &-btn:focus-visible {
+            border: 2px solid $primary_shade;
+            background: $primary_light;
+        }
+        &-btn:active:not(:focus-visible) {
+            border: 2px solid $primary_shade;
+            background: $primary_shade;
+        }
+        &-btn:disabled {
+            border: 2px solid $md_grey;
+            background: $md_grey;
+            color: $grey;
+        }
+    }
+}

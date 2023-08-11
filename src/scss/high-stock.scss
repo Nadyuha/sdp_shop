@@ -1,0 +1,220 @@
+@import '_variables';
+@import '_mixin';
+
+.high-stock {
+    margin-bottom: 70px;
+        &__title {
+            @include title;
+            margin-bottom: 26px;
+        }
+        &__btn {
+            &-block {
+                display: flex;
+                justify-content: center;
+            }
+            @include resetBtn;
+            @include primaryBtn;
+            padding: 20px 35px;
+            align-items: center;
+            margin: 0 auto;
+            outline: none;
+            transition: color, background 0.3s ease-in-out;
+            @include respond(x-small) {
+                width: 100%;
+            }
+        }
+        &__btn:hover:not(:focus-visible) {
+            border: 2px solid $primary_light;
+            background: $primary_light;
+        }
+        &__btn:focus-visible {
+            border: 2px solid $primary_shade;
+            background: $primary_light;
+        }
+        &__btn:active:not(:focus-visible) {
+            border: 2px solid $primary_shade;
+            background: $primary_shade;
+        }
+        &__block {
+            margin-bottom: 32px;
+            @include respond(x-small) {
+                margin-bottom: 33.5px;
+            }
+            &-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+                gap: 32px;
+                @include respond(x-large) {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+                @include respond(large) {
+                    grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+                }
+                @include respond(small) {
+                    gap: 16px;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                @include respond(x-small) {
+                    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                }
+            }
+            &-item.high-stock__block-item-seven.none-card {
+                display: block;
+                @include respond(large) {
+                    display: none;
+                }
+            }
+            &-item.high-stock__block-item-eight.none-card {
+                display: block;
+                @include respond(large) {
+                    display: none;
+                }
+            }
+            &-item.none-card {
+                display: none;
+                    @include respond(large) {
+                        display: none;
+                    }
+            }
+            &-card {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                padding: 70px 15px 30px 15px;
+                background: #F7F7F7;
+                border-radius: 10px;
+                min-height: 420px;
+                @include respond(x-small) {
+                    padding: 40px 15px 15px 15px;
+                    min-height: 278px;
+                }
+                &-rating {
+                    position: absolute;
+                    top: 33px;
+                    left: 30px;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $secondary;
+                    @include respond(x-small) {
+                        font-size: 12px;
+                        top: 14px;
+                        left: 16px;
+                    }
+                    &-img {
+                        width: 15px;
+                        height: 15px;
+                        @include respond(x-small) {
+                            width: 13px;
+                            height: 12px;
+                        }
+                    }
+                }
+                &-picture {
+                    height: 125px;
+                    width: 100%;
+                    display: flex;
+                    align-items: end;
+                    justify-content: center;
+                    @include respond(x-small) {
+                        height: 100%
+                    }
+                    &-img {
+                        @include coverImg;
+                        @include respond(x-small) {
+                            height: 49px;
+                        }
+                    }
+                }
+                &-title {
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 31px;
+                    color: $black;
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: 20px;//23px;
+                    @include respond(x-large) {
+                        font-size: 20px;
+                    }
+                    @include respond(large) {
+                        font-size: 24px;
+                        line-height: 31px;
+                    }
+                    @include respond(x-small) {
+                        margin-bottom: 13px;
+                        font-size: 16px;
+                        line-height: 130%;
+                    }
+                &-one {
+                    width: 96%;
+                }
+                }
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    min-height: 185px;
+                    padding: 15px 15px 0px 15px;
+                    @include respond (x-small) {
+                        padding: 15px 0 0 0;
+                        min-height: 105px;
+                    }
+                }
+                &-bottom {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: auto;
+                    &-price {
+                        font-family: $font_open_sans;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: $grey;
+                        margin-bottom: 23px;
+                        @include respond (x-small) {
+                            margin-bottom: 13px;
+                        }
+                    }
+                    &-btn {
+                        @include resetBtn;
+                        @include transparentBtn;
+                        width: 128px;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: color, background, border,  0.3s ease-in-out;
+                        @include respond(x-small) {
+                            padding: 12px 25px;
+                            width: 100%;
+                        }
+                    }
+                    &-btn:hover:not(:focus-visible) {
+                        border: 2px solid $primary;
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-btn:focus-visible {
+                        border: 2px solid $primary;
+                        background: $primary_light;
+                        color: $white;
+                    }
+                    &-btn:active:not(:focus-visible) {
+                        border: 2px solid $primary_shade;
+                        background: $primary_shade;
+                        color: $white;
+                    }
+                }
+            }
+        }
+        
+}
+
+.active-card {
+    display: block;
+}
+
+.none-card {
+    display: none;
+}

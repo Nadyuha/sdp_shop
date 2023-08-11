@@ -1,0 +1,199 @@
+@import '_variables';
+@import '_mixin';
+@import '../css/swiper-bundle.min.css';
+
+.useful {
+    margin-bottom: 60px;
+    @include respond(x-small) {
+        margin-bottom: 110px;
+    }
+    @include respond(large) {
+        margin-bottom: 62px;
+    }
+    &__container {
+        &-title {
+            @include title;
+            margin-bottom: 2px;
+        }
+    }
+    &__swiper {
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        top: -9px;
+        &-button {
+            &-next {
+                @include resetBtn;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid $primary;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                color: $primary;
+                background: transparent;
+                outline: none;
+                transition: color, background, 0.3s ease-in-out;
+                &-img {
+                    width: 8px;
+                    height: 100%;
+                }
+            } 
+            &-next:hover:not(:focus-visible) {
+                background: $primary;
+                color: $white;
+            }
+            &-next:focus-visible {
+                background: $primary_light;
+                color: $white;
+                border: 2px solid $primary;
+            }
+            &-next:active:not(:focus-visible) {
+                background: $primary_shade;
+                color: $white;
+                border: 2px solid $primary_shade;
+            }
+            &-prev {
+                @include resetBtn;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 2px solid $primary;
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                color: $primary;
+                margin-right: 13px;
+                background: transparent;
+                outline: none;
+                transition: color, background, 0.3s ease-in-out;
+                &-img {
+                    width: 8px;
+                    height: 100%;
+                    transform: rotate(180deg);
+                }
+            }
+            &-prev:hover:not(:focus-visible) {
+                background: $primary;
+                color: $white;
+            }
+            &-prev:focus-visible {
+                background: $primary_light;
+                color: $white;
+                border: 2px solid $primary;
+            }
+            &-prev:active:not(:focus-visible) {
+                background: $primary_shade;
+                color: $white;
+                border: 2px solid $primary_shade;
+            }
+        }
+    }
+    &__block {
+        position: relative;
+        &-btns {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            top: -35px;
+            @include respond(x-small) {
+                top: 500px;
+                justify-content: center;
+            }
+        }
+    }
+    &__swiper {
+        &-card {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: #F7F7F7;
+            border-radius: 10px;
+            min-height: 676px;
+            width: 100%;
+            @include respond(large) {
+                min-height: 456px;
+            }
+            &-img {
+                //@include coverImg;
+                width: 100%;
+                height: 424px;
+                @include respond(large) {
+                    height: 202px;
+                }
+            }
+            &-content {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                min-height: 250px;
+                padding: 30px 27px 30px 30px;
+                @include respond(large) {
+                    min-height: 250px;
+                }
+            }
+            &-descr {
+                font-family: $font_open_sans;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 32px;
+                color: $black;
+                background: transparent;
+                margin: 0;
+                margin-bottom: 38px;
+                padding: 0;
+                @include respond(large) {
+                    font-size: 16px;
+                    line-height: 21px;
+                    margin-bottom: 30px
+                }
+            }
+            &-link {
+                @include transparentBtn;
+                width: 128px;
+                margin-top: auto;
+                transition: border, background, 0.3s ease-in-out;
+            }
+            &-link:hover:not(:focus-visible) {
+                border: 2px solid $primary;
+                background: $primary;
+                color: $white;
+            }
+            &-link:focus-visible {
+                border: 2px solid $primary;
+                background: $primary_light;
+                color: $white;
+            }
+            &-link:active:not(:focus-visible) {
+                border: 2px solid $primary_shade;
+                background: $primary_shade;
+                color: $white;
+            }
+        }
+    }
+}
+.useful__swiper-button.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.useful__swiper-button.useful__swiper-button:hover.swiper-button-disabled {
+    background: $white;
+    color: $grey;
+    cursor: not-allowed;
+}
+
+.swiper-slide-useful {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: auto;
+    outline: none;
+    //width: calc(100% / 2 - 20px);
+}

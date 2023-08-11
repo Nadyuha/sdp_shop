@@ -1,0 +1,663 @@
+@import '_variables';
+@import '_mixin';
+
+.card {
+    display: none;
+    position: relative;
+    top: -15px;
+    @include respond(large) {
+        top: 17px;
+    }
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 32px;
+        row-gap: 82px;
+        position: relative;
+        top: 5px;
+        margin-bottom: 50px;
+        @include respond(large) {
+            grid-template-columns: repeat(9, 1fr);
+            row-gap: 70px;
+            margin-bottom: 80px;
+        }
+        @include respond(large) {
+            row-gap: 33px;
+        }
+        @include respond(x-small) {
+            top: 27px;
+            row-gap: 0px;
+        }
+        &-left {
+            grid-column: span 6;
+            @include respond(large) {
+                grid-column: span 5;
+            }
+            @include respond(medium) {
+                grid-column: span 9;
+            }
+            @include respond(x-small) {
+                margin-bottom: 10px;
+            }
+            &-card {
+                //height: 100%;
+                &-img {
+                    margin-bottom: 25px;
+                    cursor: pointer;
+                    @include respond(x-small) {
+                        margin-bottom: 278px;
+                    }
+                    &-top {
+                        background: center / contain no-repeat url(../img/d-31.png);
+                        height: 245px;
+                        margin-bottom: 16px;
+                        @include respond(large) {
+                            height: 202px;
+                        }
+                        @include respond(medium) {
+                            height: 245px;
+                            margin-bottom: 32px;
+                        }
+                        @include respond(x-small) {
+                            height: 116px;
+                            margin-bottom: 16px;
+                        }
+                    }
+                    &-bottom {
+                        display: flex;
+                        justify-content: space-between;
+                        height: 81px;
+                        background: $grey_light;
+                        @include respond(medium) {
+                            flex-direction: column;
+                            align-items: center;
+                            height: 349px;
+                            width: 30%;
+                        }
+                        @include respond(x-small) {
+                            flex-direction: row;
+                            height: 81px;
+                            width: 100%;
+                        }
+                        &-picture {
+                            width: 27%;
+                            @include respond(medium) {
+                                width: 70%;
+                            }
+                            @include respond(x-small) {
+                                width: 30%;
+                            }
+                            &-one {
+                                background: center / contain no-repeat url(../img/d-31-1.png);
+                                height: 100%;
+                                @include respond(medium) {
+                                    background: bottom / contain no-repeat url(../img/d-31-1.png);
+                                }
+                                @include respond(x-small) {
+                                    width: 49%;
+                                    background: center / contain no-repeat url(../img/d-31-1.png);
+                                }
+                            }
+                            &-two {
+                                background: center / contain no-repeat url(../img/d-31-2.png);
+                                height: 100%;
+                                width: 15%;
+                                @include respond(large) {
+                                    width: 12%;
+                                }
+                                @include respond(medium) {
+                                    width: 35%;
+                                }
+                                @include respond(x-small) {
+                                    width: 27%;
+                                    background: left / contain no-repeat url(../img/d-31-2.png);
+                                }
+                            }
+                            &-three {
+                                background: center / contain no-repeat url(../img/d-31-3.png);
+                                height: 100%;
+                                @include respond(x-small) {
+                                    width: 8%;
+                                    background: left / cover no-repeat url(../img/d-31-3.png);
+                                }
+                            }
+                            &-four {
+                                background: center / contain no-repeat url(../img/d-31-4.png);
+                                height: 100%;
+                                width: 29%;
+                                @include respond(large) {
+                                    background: left / cover no-repeat url(../img/d-31-4.png);
+                                    width: 13%;
+                                }
+                                @include respond(medium) {
+                                    background: top / contain no-repeat url(../img/d-31-4.png);
+                                }
+                                @include respond(x-small) {
+                                    display: none
+                                }
+                            }
+                        }
+                    }
+                }
+                &-content {
+                    &-title {
+                        @include title;
+                        font-size: 16px;
+                        @include respond(x-small) {
+                            font-size: 16px;
+                            line-height: 16px;
+                            font-weight: 600;
+                            margin-bottom: 9px;
+                        }
+                    }
+                    &-descr {
+                        margin: 0;
+                        padding: 0;
+                        background: transparent;
+                        font-family: $font_open_sans;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 25px;
+                        color: $black;
+                        margin-bottom: 110px;
+                        @include respond(large) {
+                            margin-bottom: 90px;
+                        }
+                        @include respond(medium) {
+                            width: 83%;
+                            margin-bottom: 36px;
+                        }
+                        @include respond(x-small) {
+                            width: 99%;
+                            margin-bottom: 13px;
+                        }
+                        &-span {
+                            display: block;
+                            position: relative;
+                            top: 6px;
+                        }
+                    }
+                    &-picture {
+                        display: flex;
+                        justify-content: flex-start;
+                        height: 113px;
+                        &-img {
+                            width: 40%;
+                            @include respond(large) {
+                                width: 50%;
+                            }
+                            @include respond(medium) {
+                                width: 38.5%;
+                            }
+                            @include respond(x-small) {
+                                width: 50%;
+                            }
+                            &-first {
+                                background: center / contain no-repeat url(../img/d-31-5.png);
+                                height: 100%;
+                                margin-right: 32px;
+                                @include respond(x-small) {
+                                    margin-right: 20px;
+                                }
+                            }
+                            &-second {
+                                background: center / contain no-repeat url(../img/d-31-6.png);
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-right {
+            grid-column: span 6;
+            @include respond(large) {
+                grid-column: span 4;
+            }
+            @include respond(medium) {
+                grid-column: span 9;
+            }
+            &-top {
+                padding: 15px 0;
+                margin-bottom: 85px;
+                @include respond(large) {
+                    margin-bottom: 42px;
+                }
+                @include respond(medium) {
+                    position: absolute;
+                    top: 313px;
+                    left: 38%;
+                }
+                @include respond(x-small) {
+                    top: 220px;
+                    left: 12px;
+                    padding: 12px 0;
+                }
+                &-rating {
+                    //position: absolute;
+                    top: 33px;
+                    left: 30px;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $secondary;
+                    &-img {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+                &-title {
+                    @include title;
+                    font-size: 24px;
+                    margin-bottom: 5px;
+                    @include respond(x-small) {
+                        font-size: 16px;
+                        line-height: 21px;
+                    }
+                }
+                &-descr {
+                    @include title;
+                    font-size: 14px;
+                    line-height: 14px;
+                    color: $grey;
+                    background: transparent;
+                    margin-bottom: 20px;
+                    @include respond(small) {
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                    @include respond(x-small) {
+                        width: 75%;
+                    }
+                }
+                &-price {
+                    display: block;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 47px;
+                    color: $black;
+                    margin-bottom: 21px;
+                    @include respond(x-small) {
+                        font-size: 24px;
+                        line-height: 31px;
+                        margin-bottom: 13px;
+                    }
+                }
+                &-btn {
+                    display: flex;
+                    flex-direction: column;
+                    @include respond(x-small) {
+                        width: 96%;
+                    }
+                    &-top {
+                        @include primaryBtn;
+                        padding: 19px 29px;
+                        width: 230px;
+                        transition: color, border, background, 0.3s ease-in-out;
+                        @include respond(x-small) {
+                            width: 100%;
+                        }
+                    }
+                    &-top:hover:not(:focus-visible) {
+                        border: 2px solid $primary_light;
+                        background: $primary_light;
+                        color: $white;
+                    }
+                    &-top:focus-visible {
+                        border: 2px solid $primary;
+                        background: $primary_light;
+                        color: $white;
+                    }
+                    &-top:active:not(:focus-visible) {
+                        border: 2px solid $primary_shade;
+                        background: $primary_shade;
+                        color: $white;
+                    }
+                    &-bottom {
+                        font-family: $font_open_sans;
+                        font-weight: 600;
+                        font-size: 16px;
+                        line-height: 16px;
+                        color: $primary;
+                        border: none;
+                        outline: none;
+                        background: transparent;
+                        padding: 14px 10px;
+                        width: 230px;
+                        @include respond(x-small) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            &-bottom {
+                display: flex;
+                width: 100%;
+                @include respond(x-small) {
+                    margin-bottom: 63px;
+                }
+                    &-list {
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                    }
+                    &-item {
+                        display: flex;
+                        width: 100%;
+                        @include respond(x-small) {
+                            flex-direction: column;
+                            margin-bottom: 9px;
+                        }
+                        &-text {
+                            color: $black;
+                            font-family: $font_open_sans;
+                            font-size: 14px;
+                            font-style: normal;
+                            font-weight: 400;
+                            line-height: 25px;
+                            @include respond(x-small) {
+                                line-height: normal;
+                            }
+                        }
+                        &-block {
+                            display: flex;
+                            width: 52%;
+                            margin-right: 4px;
+                            @include respond(large) {
+                                width: 45.5%;
+                            }
+                            @include respond(medium) {
+                                width: 64.5%;
+                            }
+                            &-span {
+                                display: block;
+                                position: relative;
+                                bottom: 9px;
+                                width: 100%;
+                                border-bottom: 1px dashed $grey;
+                                @include respond(x-small) {
+                                    display: none;
+                                }
+                            }
+                            &-text {
+                                display: block;
+                                color: $grey;
+                                font-family: $font_open_sans;
+                                font-size: 14px;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 25px;
+                                margin-right: 4px;
+                                @include respond(x-small) {
+                                    font-size: 10px;
+                                    line-height: normal;
+                                }
+                            }
+                        }
+                        &-text {
+                            display: inline-block;
+                        }
+                }
+                // &-right {
+                //     width: 50%;
+                //     &-list {
+                //         display: flex;
+                //         flex-direction: column;
+                //     }
+                //     &-item {
+                //         display: flex;
+                //         justify-content: flex-start;
+                //         width: 100%;
+                //     }
+                // }
+            }
+        }
+        &-bottom {
+            grid-column: span 12;
+            @include respond(large) {
+                grid-column: span 9;
+            }
+            @include respond(x-small) {
+                margin-bottom: 73px;
+            }
+            &-swiper {
+                top: -13px;
+                @include respond(large) {
+                    top: -11px;
+                }
+                &-button {
+                    &-next {
+                        @include resetBtn;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid $primary;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+                        color: $primary;
+                        background: transparent;
+                        outline: none;
+                        transition: color, background, 0.3s ease-in-out;
+                        &-img {
+                            width: 8px;
+                            height: 100%;
+                        }
+                    } 
+                    &-next:hover:not(:focus-visible) {
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-next:focus-visible {
+                        background: $primary_light;
+                        color: $white;
+                        border: 2px solid $primary;
+                    }
+                    &-next:active:not(:focus-visible) {
+                        background: $primary_shade;
+                        color: $white;
+                        border: 2px solid $primary_shade;
+                    }
+                    &-prev {
+                        @include resetBtn;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border: 2px solid $primary;
+                        border-radius: 50%;
+                        width: 32px;
+                        height: 32px;
+                        cursor: pointer;
+                        color: $primary;
+                        margin-right: 13px;
+                        background: transparent;
+                        outline: none;
+                        transition: color, background, 0.3s ease-in-out;
+                        &-img {
+                            width: 8px;
+                            height: 100%;
+                            transform: rotate(180deg);
+                        }
+                    }
+                    &-prev:hover:not(:focus-visible) {
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-prev:focus-visible {
+                        background: $primary_light;
+                        color: $white;
+                        border: 2px solid $primary;
+                    }
+                    &-prev:active:not(:focus-visible) {
+                        background: $primary_shade;
+                        color: $white;
+                        border: 2px solid $primary_shade;
+                    }
+                }
+            }
+            &-btns {
+                position: relative;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                top: -35px;
+                @include respond(x-small) {
+                    top: 316px;
+                    justify-content: center;
+                }
+            }
+            &-title {
+                @include title;
+                font-size: 24px;
+                //margin-bottom: 22px;
+                @include respond(x-small) {
+                    line-height: 31px;
+                }
+            }
+            &-item {
+                height: auto;
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            &-card {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                padding: 70px 15px 30px 15px;
+                background: #F7F7F7;
+                border-radius: 10px;
+                height: 100%;
+                @include respond(x-small) {
+                    padding: 40px 15px 13px 15px;
+                    min-height: 278px;
+                    //height: auto;
+                }
+                &-rating {
+                    position: absolute;
+                    top: 33px;
+                    left: 30px;
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $secondary;
+                    @include respond(x-small) {
+                        font-size: 12px;
+                        top: 14px;
+                        left: 16px;
+                    }
+                    &-img {
+                        width: 15px;
+                        height: 15px;
+                        @include respond(x-small) {
+                            width: 13px;
+                            height: 12px;
+                        }
+                    }
+                }
+                &-picture {
+                    height: 125px;
+                    width: 100%;
+                    display: flex;
+                    align-items: end;
+                    justify-content: center;
+                    @include respond(x-small) {
+                        height: 57px;
+                    }
+                    &-img {
+                        @include coverImg;
+                        @include respond(x-small) {
+                            height: 57px;
+                        }
+                    }
+                }
+                &-title {
+                    font-family: $font_open_sans;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 31px;
+                    color: $black;
+                    margin: 0;
+                    padding: 0;
+                    margin-bottom: 20px;//23px;
+                    @include respond(x-large) {
+                        font-size: 20px;
+                    }
+                    @include respond(large) {
+                        font-size: 24px;
+                        line-height: 31px;
+                    }
+                    @include respond(x-small) {
+                        margin-bottom: 13px;
+                        font-size: 16px;
+                        line-height: 130%;
+                    }
+                &-one, &-three {
+                    width: 94%;
+                }
+                }
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    min-height: 185px;
+                    padding: 15px 15px 0px 15px;
+                    @include respond (x-small) {
+                        padding: 10px 0 0 0;
+                        min-height: 105px;
+                    }
+                }
+                &-bottom {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: auto;
+                    &-price {
+                        font-family: $font_open_sans;
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 20px;
+                        color: $grey;
+                        margin-bottom: 23px;
+                        @include respond (x-small) {
+                            margin-bottom: 13px;
+                        }
+                    }
+                    &-btn {
+                        @include resetBtn;
+                        @include transparentBtn;
+                        width: 128px;
+                        text-align: center;
+                        cursor: pointer;
+                        transition: color, background, border,  0.3s ease-in-out;
+                        @include respond(x-small) {
+                            padding: 12px 25px;
+                            width: 100%;
+                        }
+                    }
+                    &-btn:hover:not(:focus-visible) {
+                        border: 2px solid $primary;
+                        background: $primary;
+                        color: $white;
+                    }
+                    &-btn:focus-visible {
+                        border: 2px solid $primary;
+                        background: $primary_light;
+                        color: $white;
+                    }
+                    &-btn:active:not(:focus-visible) {
+                        border: 2px solid $primary_shade;
+                        background: $primary_shade;
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.open-card {
+    display: block;
+}
